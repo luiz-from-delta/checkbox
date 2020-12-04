@@ -1,0 +1,11 @@
+.lan-checkbox {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+  cursor: pointer;
+}
+
+.lan-checkbox svg {
+  margin-right: 4px;
+}

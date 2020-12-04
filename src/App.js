@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import Checkbox from "./Checkbox";
 
 function App() {
+  function handleSelect(isChecked) {
+    alert(isChecked ? "Você concordou!" : "Ops, você não concordou!");
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <header>Checkbox:</header>
+        <Checkbox />
+      </div>
+      <div>
+        <header>Checkbox com Label:</header>
+        <Checkbox label="Li e concordo com os termos" />
+      </div>
+      <div>
+        <header>Marcada por Padrão:</header>
+        <Checkbox label="Li e concordo com os termos" defaultChecked />
+      </div>
+      <div>
+        <header>Tamanho e Cor:</header>
+        <Checkbox
+          label="Li e concordo com os termos"
+          defaultChecked
+          size={22}
+          color="#0090ff"
+        />
+      </div>
+      <div>
+        <header>
+          Você também pode passar uma função de callback para ler o estado da
+          checkbox:
+        </header>
+        <Checkbox
+          label="Li e concordo com os termos"
+          defaultChecked
+          size={22}
+          color="#0090ff"
+          onChange={handleSelect}
+        />
+      </div>
     </div>
   );
 }
